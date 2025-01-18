@@ -14,7 +14,7 @@ function App() {
     setResponse(null);
 
     try{
-
+      //await
     }catch(error){
       alert("Failed to get response");
     } finally{
@@ -32,7 +32,7 @@ function App() {
       <ChatInput onSubmit={handleQuestionSubmit}/>
       
       {/* Response*/}
-      <ChatResponse />
+      <ChatResponse response={response}/>
     </div>
   )
 }
