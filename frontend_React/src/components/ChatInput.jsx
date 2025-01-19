@@ -14,7 +14,7 @@ const [question,setQuestion]=useState("");
 
     return (
         <div className="container my-4">
-            <div onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="question">Ask a question...</label>
                     
@@ -30,7 +30,7 @@ const [question,setQuestion]=useState("");
                 <button type="submit" className="btn btn-primary mt-2">
                     Submit
                 </button>
-            </div>
+            </form>
         </div>
     )
 }

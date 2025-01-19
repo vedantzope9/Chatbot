@@ -3,6 +3,7 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ChatInput from './components/ChatInput'
 import ChatResponse from './components/ChatResponse'
+import { fetchChatResponse } from './services/api'
 
 function App() {
   const [response, setResponse]= useState(null);
@@ -14,7 +15,8 @@ function App() {
     setResponse(null);
 
     try{
-      //await
+      const apiResponse = await fetchChatResponse(question);
+      setResponse(apiResponse);
     }catch(error){
       alert("Failed to get response");
     } finally{

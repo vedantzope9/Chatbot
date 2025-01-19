@@ -9,10 +9,10 @@ const ChatResponse = ({response}) =>{
         <div className="container my-4">
             <h3>Response</h3>
             {candidates.map((candidate, index) => (
-                <div class="card mb-3" key={index}>
-                <div class="card-body">
-                  <h5 class="card-title">Candidate {index+1}</h5>
-                  <p class="card-text">{candidate.content.parts[0].text }</p>
+                <div className="card mb-3" key={index}>
+                <div className="card-body">
+                  <h5 className="card-title">Candidate {index+1}</h5>
+                  <p className="card-text">{candidate.content.parts[0].text }</p>
                   <h6>Citations</h6>
                     <ul>
                         {candidate?.citationMetadata?.citationSources.map((source,idx) => (
@@ -20,7 +20,7 @@ const ChatResponse = ({response}) =>{
                             <a href={source.url} target="_blank" rel="noopener noreferrer">
                                 {source.url}
                             </a> {" "}
-                            (Indexes: {source.startIndex}-{source.endIndex})
+                            (Indexes: {source.startIndex} - {source.endIndex})
                             </li>
                         ))}
                     </ul>
@@ -29,6 +29,9 @@ const ChatResponse = ({response}) =>{
             ))}
 
             <h4>Usage Metadata</h4>
+            <p>Prompt Tokens: {usageMetadata.promptTokenCount}</p>
+            <p>Response Tokens: {usageMetadata.candidatesTokenCount}</p>
+            <p>Total Tokens: {usageMetadata.totalTokenCount}</p>
         </div>
     )
 }
